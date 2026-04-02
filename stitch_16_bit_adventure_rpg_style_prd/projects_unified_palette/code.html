@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roman Merk - Engineering Portfolio</title>
+<script type="text/javascript" nonce="0c7ea0b0b6164514a186fd5e44e" src="//local.adguard.org?ts=1774613352182&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzgzYmJhMWI4YzUzZjQzNjlhOTk3MjRkZTY4Mjg0ZGFhEgsSBxCt0se6uQwYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTk3OTAxMzYyMDczOTE3MjA1Mg%26filename%3D%26opi%3D89354086&amp;app=com.brave.Browser&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-push&amp;st-loc&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="0c7ea0b0b6164514a186fd5e44e" src="//local.adguard.org?ts=1774613352182&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=VT323&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#5E3A21",
+                        "primary": "#F4D03F",
+                        "on-primary": "#1E1E24",
+                        "background": "#1E1E24",
+                        "surface": "#131319",
+                        "surface-container": "#2F353B",
+                        "surface-container-low": "#1B1B21",
+                        "on-surface": "#EAEAEA",
+                        "on-surface-variant": "#CFC6AE",
+                        "primary-container": "#F4D03F",
+                        "secondary": "#3A7CA5",
+                        "outline-variant": "#5E3A21",
+                    },
+                    fontFamily: {
+                        "headline": ["Press Start 2P"],
+                        "body": ["Space Grotesk"],
+                        "mono": ["VT323"],
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .scanline-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pixel-border {
+            border-style: solid;
+            border-width: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<div class="scanline-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131319] border-b-4 border-[#2F353B] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-4">
+<span class="font-['Press_Start_2P'] text-xl text-[#F4D03F] tracking-widest uppercase">ANALOG_EXECUTIVE</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-['Press_Start_2P'] uppercase text-[10px] tracking-tighter text-[#EAEAEA] opacity-70 hover:bg-[#F4D03F] hover:text-[#1E1E24] transition-colors duration-100 px-2 py-1 active:translate-y-1" href="#">Home</a>
+<a class="font-['Press_Start_2P'] uppercase text-[10px] tracking-tighter text-[#F4D03F] border-b-4 border-[#F4D03F] pb-1 active:translate-y-1" href="#">Projects</a>
+<a class="font-['Press_Start_2P'] uppercase text-[10px] tracking-tighter text-[#EAEAEA] opacity-70 hover:bg-[#F4D03F] hover:text-[#1E1E24] transition-colors duration-100 px-2 py-1 active:translate-y-1" href="#">Services</a>
+<a class="font-['Press_Start_2P'] uppercase text-[10px] tracking-tighter text-[#EAEAEA] opacity-70 hover:bg-[#F4D03F] hover:text-[#1E1E24] transition-colors duration-100 px-2 py-1 active:translate-y-1" href="#">About</a>
+<a class="font-['Press_Start_2P'] uppercase text-[10px] tracking-tighter text-[#EAEAEA] opacity-70 hover:bg-[#F4D03F] hover:text-[#1E1E24] transition-colors duration-100 px-2 py-1 active:translate-y-1" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-[#1B1B21] pixel-border border-[#5E3A21] px-3 py-1 gap-3">
+<span class="text-[10px] font-['Press_Start_2P'] text-[#CFC6AE]">VIEW: STANDARD</span>
+<span class="material-symbols-outlined text-[#F4D03F]" data-icon="toggle_on">toggle_on</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-[#1B1B21] border-r-4 border-[#2F353B] shadow-[8px_0px_0px_0px_rgba(0,0,0,0.3)] z-40 p-6">
+<div class="mb-10">
+<div class="w-16 h-16 bg-[#2F353B] pixel-border border-[#F4D03F] mb-4 overflow-hidden">
+<img alt="Executive Rank Insignia" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeX2xUyuMrHOYU73qRRmiHi4v8lQpwvJ2KyTpcF4oZVMN-RECdF8SPmLix7CIKIJiiq3PoLTR2ngxSEOFBOAfcgUXW8NkXzZrXTYT1dI11oKAGDWxRx6kGfokn6V1OhrpyGHFq5KHBg3-8ViJPe2gO9Fp1Z-WJavnp2TB9oJ0rHeStFrePGJDFUk4LehJ5y-oJNB74_I3avALic8EuvY7x_z6GAQStmLvHzYJTs9SO8IV3vuOY9dh_jXdPvQcxtRl7e8yNTkL8Wz1E"/>
+</div>
+<h3 class="font-['Press_Start_2P'] text-[#F4D03F] text-[10px] mb-1">RANK: COMMANDER</h3>
+<p class="font-['Space_Grotesk'] font-bold text-xs text-[#CFC6AE] uppercase">LEVEL 94</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 p-3 font-['Space_Grotesk'] font-bold text-sm text-[#EAEAEA] opacity-80 hover:bg-[#2F353B] hover:text-[#F4D03F] active:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+            Experience
+        </a>
+<a class="flex items-center gap-3 p-3 font-['Space_Grotesk'] font-bold text-sm text-[#EAEAEA] opacity-80 hover:bg-[#2F353B] hover:text-[#F4D03F] active:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+            Skills
+        </a>
+<a class="flex items-center gap-3 p-3 font-['Space_Grotesk'] font-bold text-sm bg-[#F4D03F] text-[#1E1E24] border-l-4 border-[#3A7CA5] active:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+            Equipment
+        </a>
+<a class="flex items-center gap-3 p-3 font-['Space_Grotesk'] font-bold text-sm text-[#EAEAEA] opacity-80 hover:bg-[#2F353B] hover:text-[#F4D03F] active:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            Log
+        </a>
+</nav>
+<button class="mt-auto w-full bg-[#F4D03F] text-[#1E1E24] font-['Press_Start_2P'] text-[10px] py-4 pixel-border border-[#1E1E24] hover:bg-[#E7C433] active:translate-y-1 transition-all uppercase">
+        VIEW_MANIFESTO
+    </button>
+</aside>
+<!-- Main Content -->
+<main class="min-h-screen bg-[#1E1E24] pt-28 pb-20 px-6 lg:pl-72 lg:pr-12">
+<div class="max-w-7xl mx-auto">
+<!-- Hero Header Section -->
+<section class="mb-16 relative">
+<div class="absolute -top-10 -left-4 font-['Press_Start_2P'] text-[8rem] text-[#2F353B] opacity-20 pointer-events-none select-none">PRJ</div>
+<h1 class="font-['Press_Start_2P'] text-3xl md:text-5xl text-[#F4D03F] leading-tight mb-4 relative z-10 uppercase">
+                Engineering<br/>Portfolio
+            </h1>
+<div class="w-24 h-2 bg-[#F4D03F] mb-8"></div>
+<p class="max-w-2xl text-lg text-[#CFC6AE] font-body font-light leading-relaxed">
+                A curated selection of high-performance architectural solutions and technical implementations across the digital stack.
+            </p>
+</section>
+<!-- Bento Grid Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1: Aegis Firewall -->
+<article class="group bg-[#2F353B] pixel-border border-[#5E3A21] hover:border-[#F4D03F] transition-colors relative overflow-hidden flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]">
+<div class="h-2 w-full bg-[#F4D03F] absolute top-0 left-0"></div>
+<div class="p-8 pt-10 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-[#F4D03F]" data-icon="shield">shield</span>
+<span class="font-['Press_Start_2P'] text-[8px] text-[#CFC6AE] px-2 py-1 bg-[#1B1B21] border border-[#5E3A21]">ID: 001</span>
+</div>
+<h2 class="font-['Press_Start_2P'] text-lg text-[#F4D03F] mb-3 uppercase">Aegis Firewall</h2>
+<p class="font-body font-bold text-sm text-[#EAEAEA] mb-4">Enterprise-grade perimeter defense and packet inspection system.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">RUST</span>
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">KUBERNETES</span>
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">EBPF</span>
+</div>
+<div class="mt-auto">
+<div class="mb-6 p-4 bg-[#1B1B21] border-l-4 border-[#3A7CA5]">
+<h4 class="text-[10px] font-['Press_Start_2P'] text-[#3A7CA5] mb-2 uppercase">Result/Purpose</h4>
+<p class="text-xs text-[#CFC6AE] leading-relaxed font-body">Reduced network latency by 45% while blocking 99.9% of automated zero-day exploits.</p>
+</div>
+<div class="flex gap-4">
+<a class="flex-1 flex items-center justify-center gap-2 py-3 bg-[#F4D03F] text-[#1E1E24] font-['Press_Start_2P'] text-[10px] hover:bg-[#E7C433] transition-colors active:translate-y-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span> LIVE_LINK
+                            </a>
+<a class="px-4 flex items-center justify-center bg-[#1B1B21] text-[#EAEAEA] border border-[#5E3A21] hover:text-[#F4D03F] transition-colors active:translate-y-1" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project Card 2: Neural Net V2 -->
+<article class="group bg-[#2F353B] pixel-border border-[#F4D03F] transition-colors relative overflow-hidden flex flex-col h-full lg:scale-105 lg:z-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.4)]">
+<div class="h-2 w-full bg-[#F4D03F] absolute top-0 left-0"></div>
+<div class="p-8 pt-10 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-[#F4D03F]" data-icon="psychology">psychology</span>
+<span class="font-['Press_Start_2P'] text-[8px] text-[#CFC6AE] px-2 py-1 bg-[#1B1B21] border border-[#5E3A21]">ID: 002</span>
+</div>
+<h2 class="font-['Press_Start_2P'] text-lg text-[#F4D03F] mb-3 uppercase">Neural Net V2</h2>
+<p class="font-body font-bold text-sm text-[#EAEAEA] mb-4">Deep learning optimization for real-time edge computing.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">PYTHON</span>
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">PYTORCH</span>
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">CUDA</span>
+</div>
+<div class="mt-auto">
+<div class="mb-6 p-4 bg-[#1B1B21] border-l-4 border-[#3A7CA5]">
+<h4 class="text-[10px] font-['Press_Start_2P'] text-[#3A7CA5] mb-2 uppercase">Result/Purpose</h4>
+<p class="text-xs text-[#CFC6AE] leading-relaxed font-body">Achieved 12ms inference speed on mobile hardware, enabling real-time spatial mapping.</p>
+</div>
+<div class="flex gap-4">
+<a class="flex-1 flex items-center justify-center gap-2 py-3 bg-[#F4D03F] text-[#1E1E24] font-['Press_Start_2P'] text-[10px] hover:bg-[#E7C433] transition-colors active:translate-y-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span> LIVE_LINK
+                            </a>
+<a class="px-4 flex items-center justify-center bg-[#1B1B21] text-[#EAEAEA] border border-[#5E3A21] hover:text-[#F4D03F] transition-colors active:translate-y-1" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project Card 3: Cloud Architect -->
+<article class="group bg-[#2F353B] pixel-border border-[#5E3A21] hover:border-[#F4D03F] transition-colors relative overflow-hidden flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]">
+<div class="h-2 w-full bg-[#F4D03F] absolute top-0 left-0"></div>
+<div class="p-8 pt-10 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-[#F4D03F]" data-icon="cloud">cloud</span>
+<span class="font-['Press_Start_2P'] text-[8px] text-[#CFC6AE] px-2 py-1 bg-[#1B1B21] border border-[#5E3A21]">ID: 003</span>
+</div>
+<h2 class="font-['Press_Start_2P'] text-lg text-[#F4D03F] mb-3 uppercase">Cloud Architect</h2>
+<p class="font-body font-bold text-sm text-[#EAEAEA] mb-4">Multi-region infrastructure provisioning and monitoring engine.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">AWS</span>
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">TERRAFORM</span>
+<span class="text-[10px] px-2 py-1 bg-[#1B1B21] text-[#CFC6AE] border border-[#5E3A21] font-mono">GO</span>
+</div>
+<div class="mt-auto">
+<div class="mb-6 p-4 bg-[#1B1B21] border-l-4 border-[#3A7CA5]">
+<h4 class="text-[10px] font-['Press_Start_2P'] text-[#3A7CA5] mb-2 uppercase">Result/Purpose</h4>
+<p class="text-xs text-[#CFC6AE] leading-relaxed font-body">Automated deployment for 200+ microservices, reducing environmental drift by 80%.</p>
+</div>
+<div class="flex gap-4">
+<a class="flex-1 flex items-center justify-center gap-2 py-3 bg-[#F4D03F] text-[#1E1E24] font-['Press_Start_2P'] text-[10px] hover:bg-[#E7C433] transition-colors active:translate-y-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span> LIVE_LINK
+                            </a>
+<a class="px-4 flex items-center justify-center bg-[#1B1B21] text-[#EAEAEA] border border-[#5E3A21] hover:text-[#F4D03F] transition-colors active:translate-y-1" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Secondary Section: Case Studies Summary -->
+<section class="mt-24 bg-[#1B1B21] pixel-border border-[#5E3A21] p-12 relative shadow-[12px_12px_0px_0px_rgba(0,0,0,0.5)]">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-[#F4D03F] opacity-20 text-6xl" data-icon="terminal">terminal</span>
+</div>
+<h2 class="font-['Press_Start_2P'] text-xl text-[#F4D03F] mb-8 uppercase">Technical Manifesto</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<p class="text-[#EAEAEA] leading-relaxed font-body">
+                        I specialize in building software that doesn't just work, but thrives under extreme conditions. My approach combines the rigor of 1990s low-level engineering with the velocity of modern cloud architecture.
+                    </p>
+<div class="flex items-center gap-4 text-[#F4D03F] font-['Press_Start_2P'] text-[10px]">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                        SCALABLE BY DESIGN
+                    </div>
+<div class="flex items-center gap-4 text-[#F4D03F] font-['Press_Start_2P'] text-[10px]">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                        PERFORMANCE FIRST
+                    </div>
+</div>
+<div class="flex flex-col justify-center gap-4">
+<div class="p-4 bg-[#2F353B] border border-[#5E3A21] flex items-center justify-between">
+<span class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#EAEAEA]">System Integrity</span>
+<span class="font-['Press_Start_2P'] text-[#F4D03F] text-[10px]">99.99%</span>
+</div>
+<div class="p-4 bg-[#2F353B] border border-[#5E3A21] flex items-center justify-between">
+<span class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#EAEAEA]">Network Throughput</span>
+<span class="font-['Press_Start_2P'] text-[#F4D03F] text-[10px]">8.2 GBPS</span>
+</div>
+<div class="p-4 bg-[#2F353B] border border-[#5E3A21] flex items-center justify-between">
+<span class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-[#EAEAEA]">Security Clearance</span>
+<span class="font-['Press_Start_2P'] text-[#F4D03F] text-[10px]">LVL 4</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto flex flex-col items-center gap-6 px-8 text-center bg-[#131319] border-t-4 border-[#2F353B] py-12">
+<div class="font-['Press_Start_2P'] text-[#F4D03F] text-lg uppercase tracking-widest">ANALOG_EXECUTIVE</div>
+<nav class="flex gap-10">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#EAEAEA] opacity-80 hover:text-[#F4D03F] hover:underline underline-offset-8 transition-all" href="#">LinkedIn</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#EAEAEA] opacity-80 hover:text-[#F4D03F] hover:underline underline-offset-8 transition-all" href="#">GitHub</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#EAEAEA] opacity-80 hover:text-[#F4D03F] hover:underline underline-offset-8 transition-all" href="#">Email</a>
+</nav>
+<div class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#CFC6AE] opacity-50 mt-4">
+        © 1994-2024 ANALOG EXECUTIVE. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+</body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type="text/javascript" nonce="0c7ea0b0b6164514a186fd5e44e" src="//local.adguard.org?ts=1774613352182&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA3M2NiZmEzZDgwOTRmM2Q4ZjBmYWIzZDk2YmUzNmI1EgsSBxCt0se6uQwYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTk3OTAxMzYyMDczOTE3MjA1Mg%26filename%3D%26opi%3D89354086&amp;app=com.brave.Browser&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-push&amp;st-loc&amp;st-java&amp;st-dnt"></script><script type="text/javascript" nonce="0c7ea0b0b6164514a186fd5e44e" src="//local.adguard.org?ts=1774613352182&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#004c6e",
+              "on-secondary-container": "#8fcdfa",
+              "surface-container-lowest": "#0d0e13",
+              "secondary-container": "#00587f",
+              "on-secondary": "#00344d",
+              "primary-fixed-dim": "#e7c433",
+              "on-tertiary-container": "#795136",
+              "on-surface": "#e4e1ea",
+              "tertiary-container": "#fec7a5",
+              "on-error": "#690005",
+              "surface-dim": "#131319",
+              "on-primary-container": "#6c5900",
+              "tertiary-fixed-dim": "#f1bb9a",
+              "surface-container-highest": "#34343b",
+              "surface-bright": "#39383f",
+              "background": "#131319",
+              "on-primary-fixed": "#221b00",
+              "surface-tint": "#e7c433",
+              "inverse-surface": "#e4e1ea",
+              "tertiary-fixed": "#ffdcc7",
+              "primary": "#ffeebb",
+              "on-background": "#e4e1ea",
+              "surface-container-low": "#1b1b21",
+              "inverse-on-surface": "#303036",
+              "error-container": "#93000a",
+              "tertiary": "#ffebe0",
+              "secondary-fixed-dim": "#8fcdfa",
+              "inverse-primary": "#705d00",
+              "primary-fixed": "#ffe174",
+              "on-tertiary": "#492811",
+              "secondary": "#8fcdfa",
+              "on-primary": "#3b2f00",
+              "on-primary-fixed-variant": "#554500",
+              "surface-container": "#1f1f25",
+              "on-error-container": "#ffdad6",
+              "primary-container": "#f4d03f",
+              "surface": "#131319",
+              "surface-container-high": "#2a2930",
+              "surface-variant": "#34343b",
+              "on-surface-variant": "#cfc6ae",
+              "on-tertiary-fixed-variant": "#633e25",
+              "secondary-fixed": "#c8e6ff",
+              "error": "#ffb4ab",
+              "outline": "#98907a",
+              "on-tertiary-fixed": "#301401",
+              "on-secondary-fixed": "#001e2f",
+              "outline-variant": "#4c4634"
+            },
+            fontFamily: {
+              "press-start": ["'Press Start 2P'", "cursive"],
+              "headline": ["'Space Grotesk'", "sans-serif"],
+              "body": ["'Space Grotesk'", "sans-serif"],
+              "label": ["'Space Grotesk'", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131319;
+            color: #EAEAEA;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .scanlines::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+        .retro-border {
+            border: 4px solid #2F353B;
+            box-shadow: 8px 8px 0px 0px rgba(13, 14, 19, 0.5);
+        }
+        .gold-border {
+            border: 4px solid #F4D03F;
+        }
+        .pixel-bar {
+            height: 12px;
+            background: #1B1B21;
+            border: 2px solid #2F353B;
+            position: relative;
+        }
+        .pixel-bar-fill {
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="scanlines">
+<!-- SideNavBar Shell -->
+<aside class="flex flex-col h-screen w-64 p-6 fixed left-0 top-0 bg-[#1E1E24] dark:bg-[#1E1E24] border-r-4 border-[#2F353B] z-50">
+<div class="mb-10">
+<h1 class="text-xl font-bold tracking-tighter text-[#F4D03F] font-press-start mb-2">ANALOG_EXEC</h1>
+<p class="text-[10px] font-press-start opacity-50 text-[#EAEAEA]">V.1994.01</p>
+</div>
+<nav class="flex-grow space-y-4">
+<!-- Experience -->
+<a class="flex items-center gap-4 p-3 text-[#EAEAEA] opacity-70 hover:opacity-100 hover:bg-[#2F353B] hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="font-headline font-medium">Experience</span>
+</a>
+<!-- Skills (ACTIVE) -->
+<a class="flex items-center gap-4 p-3 text-[#F4D03F] border-l-4 border-[#F4D03F] bg-[#2F353B] font-bold hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-headline">Skills</span>
+</a>
+<!-- Equipment -->
+<a class="flex items-center gap-4 p-3 text-[#EAEAEA] opacity-70 hover:opacity-100 hover:bg-[#2F353B] hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+<span class="font-headline font-medium">Equipment</span>
+</a>
+<!-- Log -->
+<a class="flex items-center gap-4 p-3 text-[#EAEAEA] opacity-70 hover:opacity-100 hover:bg-[#2F353B] hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-headline font-medium">Log</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t-4 border-[#2F353B] space-y-4">
+<a class="flex items-center gap-4 p-2 text-[#EAEAEA] opacity-70 hover:opacity-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-label">Settings</span>
+</a>
+<button class="w-full flex items-center gap-4 p-3 bg-primary text-on-primary font-bold hover:bg-primary-fixed-dim active:translate-y-[2px] transition-all">
+<span class="material-symbols-outlined" data-icon="power_settings_new">power_settings_new</span>
+<span class="font-label">CONTACT_ME</span>
+</button>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center w-[calc(100%-16rem)] h-16 px-8 ml-64 fixed top-0 bg-[#1B1B21]/80 backdrop-blur-md border-b-4 border-[#2F353B] z-40">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-press-start text-[#F4D03F]">SYSTEM_STATUS: ONLINE</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#EAEAEA] hover:text-[#F4D03F] cursor-pointer" data-icon="notifications_active">notifications_active</span>
+<span class="material-symbols-outlined text-[#EAEAEA] hover:text-[#F4D03F] cursor-pointer" data-icon="account_tree">account_tree</span>
+<div class="w-8 h-8 bg-surface-container border-2 border-outline overflow-hidden">
+<img alt="Executive Portrait" class="w-full h-full object-cover" data-alt="Executive Portrait professional profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9p_MIJ6Qrgxrp1KdjcZFPIHBo3qQy81PkrBwxKZZkWNy7Cp4rvvIzo9cw0uHgEre4fbm4VlCqWU3LwrusHeOLPGuiwYLzYuOPVUp5NUqyymxLFT_3Zd7KBebldrK7_BO9aYKFcirKDI3s0QLgPwjoiDG-bLLNdzDiOhnKJM73a5FppFN8i_9-yb96truZEBM7sMOIZn78NOQbTowfwlCfYkqiGSCEEx6oT56agGVLMWRDuAhkiwxweVvQ-V-GFRpd9Dnvh7AdWeN8"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 p-8 min-h-screen bg-background">
+<!-- Header Section -->
+<section class="mb-16 max-w-6xl">
+<h2 class="font-press-start text-4xl text-primary mb-4 leading-tight">SKILL_TREE: V.1994</h2>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl border-l-4 border-primary pl-6">
+                Analyzing core proficiencies and deployment capabilities. Attributes scaled to 16-bit professional standards.
+            </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl">
+<!-- Attribute Panel (Left Column) -->
+<div class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low retro-border p-6 relative">
+<div class="absolute -top-1 -left-1 w-4 h-4 bg-primary"></div>
+<h3 class="font-press-start text-xs text-primary mb-6">CHARACTER_STATS</h3>
+<div class="space-y-6">
+<!-- Stat: INT -->
+<div>
+<div class="flex justify-between font-press-start text-[10px] mb-2">
+<span>INTELLECT</span>
+<span class="text-primary">LVL 94</span>
+</div>
+<div class="pixel-bar">
+<div class="pixel-bar-fill bg-primary w-[94%]"></div>
+</div>
+</div>
+<!-- Stat: STR -->
+<div>
+<div class="flex justify-between font-press-start text-[10px] mb-2">
+<span>ENDURANCE</span>
+<span class="text-secondary">LVL 82</span>
+</div>
+<div class="pixel-bar">
+<div class="pixel-bar-fill bg-secondary w-[82%]"></div>
+</div>
+</div>
+<!-- Stat: DEX -->
+<div>
+<div class="flex justify-between font-press-start text-[10px] mb-2">
+<span>PRECISION</span>
+<span class="text-tertiary-fixed-dim">LVL 88</span>
+</div>
+<div class="pixel-bar">
+<div class="pixel-bar-fill bg-tertiary-fixed-dim w-[88%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t-4 border-[#2F353B]">
+<p class="font-label text-sm text-on-surface-variant">
+                            "Specialized in high-load architectural integrity and secure deployment patterns."
+                        </p>
+</div>
+</div>
+<div class="bg-surface-container retro-border p-6 overflow-hidden">
+<h3 class="font-press-start text-xs text-primary mb-6">EQUIPPED_SPECIALS</h3>
+<div class="flex flex-wrap gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors group cursor-crosshair">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary" data-icon="security">security</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors group cursor-crosshair">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary" data-icon="cloud_done">cloud_done</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors group cursor-crosshair">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary" data-icon="monitoring">monitoring</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors group cursor-crosshair">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary" data-icon="api">api</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Skill Trees (Right Column) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Tree 1: Frontend Magic -->
+<div class="bg-surface-container-low retro-border p-8">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="auto_fix_high" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<h3 class="font-press-start text-lg">INTERFACE_ARCHITECT</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex justify-between font-label font-bold text-primary">
+<span>React / Next.js</span>
+<span>MASTER</span>
+</div>
+<div class="h-6 bg-surface-container-lowest border-2 border-outline-variant p-1">
+<div class="h-full bg-primary" style="width: 95%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body">Advanced state management, component isolation, and SSR optimizations.</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between font-label font-bold text-on-surface">
+<span>Tailwind CSS</span>
+<span>EXPERT</span>
+</div>
+<div class="h-6 bg-surface-container-lowest border-2 border-outline-variant p-1">
+<div class="h-full bg-secondary" style="width: 90%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body">Utility-first architecture, custom design system implementation.</p>
+</div>
+</div>
+</div>
+<!-- Tree 2: Backend Logic -->
+<div class="bg-surface-container-low retro-border p-8 border-t-8 border-t-tertiary-fixed-dim">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim" data-icon="database" style="font-variation-settings: 'FILL' 1;">database</span>
+<h3 class="font-press-start text-lg">SYSTEM_LOGIC</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex justify-between font-label font-bold text-tertiary-fixed-dim">
+<span>Python / Django</span>
+<span>ELITE</span>
+</div>
+<div class="h-6 bg-surface-container-lowest border-2 border-outline-variant p-1">
+<div class="h-full bg-tertiary-fixed-dim" style="width: 88%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body">RESTful APIs, asynchronous task processing, data modeling.</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between font-label font-bold text-on-surface">
+<span>Cybersecurity</span>
+<span>SPECIALIST</span>
+</div>
+<div class="h-6 bg-surface-container-lowest border-2 border-outline-variant p-1">
+<div class="h-full bg-primary-fixed-dim" style="width: 75%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body">Penetration testing, OAuth2 implementation, secure handshake protocols.</p>
+</div>
+</div>
+</div>
+<!-- Tree 3: Technical Skills Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container retro-border p-4 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="git">gite</span>
+<span class="font-press-start text-[10px]">GIT_FLOW</span>
+<span class="text-xs mt-2 text-on-surface-variant">Version Control</span>
+</div>
+<div class="bg-surface-container retro-border p-4 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="terminal">terminal</span>
+<span class="font-press-start text-[10px]">LINUX_CLI</span>
+<span class="text-xs mt-2 text-on-surface-variant">Kernel Ops</span>
+</div>
+<div class="bg-surface-container retro-border p-4 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mb-2" data-icon="deployed_code">deployed_code</span>
+<span class="font-press-start text-[10px]">DOCKER</span>
+<span class="text-xs mt-2 text-on-surface-variant">Containerization</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Terminal Section -->
+<section class="mt-20 max-w-7xl">
+<div class="bg-surface-container-lowest border-4 border-[#2F353B] p-4 font-mono text-sm">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="w-3 h-3 bg-primary"></span>
+<span>SKILL_ANALYTICS_V4.0</span>
+</div>
+<div class="text-[#8fcdfa] space-y-1">
+<p>&gt; loading skill_manifest.json...</p>
+<p>&gt; analyzing repository history...</p>
+<p>&gt; proficiency levels confirmed for 19 key technologies.</p>
+<p>&gt; status: <span class="text-primary font-bold">READY FOR DEPLOYMENT</span></p>
+<p class="animate-pulse">&gt; _</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating UI Decoration -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none">
+<div class="bg-primary/10 border-2 border-primary/30 p-4 flex items-center gap-3 backdrop-blur-sm">
+<div class="w-2 h-2 bg-primary animate-ping"></div>
+<span class="font-press-start text-[8px] text-primary">LINK_ESTABLISHED</span>
+</div>
+</div>
+</body></html>
