@@ -2,13 +2,13 @@ import { lazy, Suspense } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const SkillsPage = lazy(() => import('./pages/SkillsPage'));
-const ProjectPage = lazy(() => import('./pages/ProjectPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
+const HomePage = lazy(() => import('./legacy/pages/HomePage'));
+const AboutPage = lazy(() => import('./legacy/pages/AboutPage'));
+const PortfolioPage = lazy(() => import('./legacy/pages/PortfolioPage'));
+const ServicesPage = lazy(() => import('./legacy/pages/ServicesPage'));
+const SkillsPage = lazy(() => import('./legacy/pages/SkillsPage'));
+const ProjectPage = lazy(() => import('./legacy/pages/ProjectPage'));
+const ContactPage = lazy(() => import('./legacy/pages/ContactPage'));
 
 function RouteLoader() {
   return (
