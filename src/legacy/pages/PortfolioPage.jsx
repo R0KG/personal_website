@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Icon } from '@nsmr/pixelart-react';
 import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
-import { fadeUp } from '../lib/motion';
+import { fadeUp } from '../../lib/motion';
 
 const footerLinks = [
   { label: 'Home', to: '/' },

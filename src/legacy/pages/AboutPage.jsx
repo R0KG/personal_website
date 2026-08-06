@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { FaFileArrowDown } from 'react-icons/fa6';
 import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
-import { fadeUp } from '../lib/motion';
-import cvImage from '../../cv_image.jpg';
-import cvPdf from '../../Roman_Merkulov_CV-1.pdf';
+import { fadeUp } from '../../lib/motion';
+import cvImage from '../../../cv_image.jpg';
+import cvPdf from '../../../Roman_Merkulov_CV-1.pdf';
 
 const footerLinks = [
   { label: 'Home', to: '/' },

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Icon } from '@nsmr/pixelart-react';
 import { Link, NavLink } from 'react-router-dom';
 import AppLink from './AppLink';
-import pixelCvImage from '../../pixel_cv_image.png';
+import pixelCvImage from '../../../pixel_cv_image.png';
 
 const navItems = [
   { key: 'index', label: 'Home', to: '/', iconName: 'home' },

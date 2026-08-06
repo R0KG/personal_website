@@ -5,8 +5,8 @@ import { FaFileArrowDown, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
 import { SiTelegram } from 'react-icons/si';
 import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
-import { fadeUp } from '../lib/motion';
-import cvPdf from '../../Roman_Merkulov_CV-1.pdf';
+import { fadeUp } from '../../lib/motion';
+import cvPdf from '../../../Roman_Merkulov_CV-1.pdf';
 
 const footerLinks = [
   { label: 'Home', to: '/' },

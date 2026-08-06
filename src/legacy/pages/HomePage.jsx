@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import { Icon } from '@nsmr/pixelart-react';
 import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
-import { fadeUp } from '../lib/motion';
-import neuralMeshImage from '../../assets/neural-mesh-pexels.jpg';
+import AmbientCareerBackground from '../components/AmbientCareerBackground';
+import { fadeUp } from '../../lib/motion';
+import neuralMeshImage from '../../../assets/neural-mesh-pexels.jpg';
 
 const footerLinks = [
   { label: 'Portfolio', to: '/portfolio' },
@@ -31,32 +32,33 @@ export default function HomePage() {
       footerLinks={footerLinks}
     >
       <motion.section className="home-hero" id="home" {...fadeUp()}>
+        <AmbientCareerBackground />
         <div className="home-chip">Status: online / view: standard</div>
-        <h1>
-          <span>Cybersecurity,</span>
-          <span>AI,</span>
-          <span>and</span>
-          <span>Software engineering.</span>
-          <span>-</span>
-          <span className="is-accent">presented</span>
-          <span className="is-accent">clearly,</span>
-          <span className="is-accent">built</span>
-          <span className="is-accent">creatively.</span>
-        </h1>
-        <p className="home-hero__lead">
-          I design and build modern technical products, from secure web experiences to
-          experimental AI tools.
-        </p>
-        <div className="home-hero__actions">
-          <AppLink className="home-btn home-btn--primary" to="/portfolio">
-            View Works
-          </AppLink>
-          <AppLink className="home-btn home-btn--secondary" to="/contact">
-            Hire Me
-          </AppLink>
-          <AppLink className="home-btn home-btn--tertiary" to="/skills">
-            Switch + Get More
-          </AppLink>
+        <div className="home-hero__content">
+          <div className="home-hero__copy">
+            <h1>
+              <span>Cybersecurity, AI,</span>
+              <span>and software</span>
+              <span>engineering.</span>
+              <span className="is-accent">Presented clearly.</span>
+              <span className="is-accent">Built creatively.</span>
+            </h1>
+            <p className="home-hero__lead">
+              I design and build modern technical products, from secure web experiences to
+              experimental AI tools.
+            </p>
+            <div className="home-hero__actions">
+              <AppLink className="home-btn home-btn--primary" to="/Roman_Merkulov_CV-1.pdf" download>
+                Download CV
+              </AppLink>
+              <AppLink className="home-btn home-btn--secondary" to="/portfolio">
+                Selected Work
+              </AppLink>
+              <AppLink className="home-btn home-btn--tertiary" to="/contact">
+                Start a Conversation
+              </AppLink>
+            </div>
+          </div>
         </div>
       </motion.section>
 
