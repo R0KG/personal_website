@@ -48,9 +48,6 @@ export default function HomePage() {
               experimental AI tools.
             </p>
             <div className="home-hero__actions">
-              <AppLink className="home-btn home-btn--primary" to="/Roman_Merkulov_CV-1.pdf" download>
-                Download CV
-              </AppLink>
               <AppLink className="home-btn home-btn--secondary" to="/portfolio">
                 Selected Work
               </AppLink>
