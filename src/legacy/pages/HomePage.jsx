@@ -128,11 +128,13 @@ export default function HomePage() {
           </motion.article>
 
           <motion.article className="home-project-card home-project-card--accent" {...fadeUp(0.25)}>
-            <div>
-              <h3>Want to see more?</h3>
-              <p>Explore more technical builds, AI systems, and tooling projects.</p>
-            </div>
-            <span className="home-project-card__arrow"></span>
+            <AppLink className="home-project-card__accent-link" to="/portfolio" aria-label="View the full portfolio">
+              <div>
+                <h3>Want to see more?</h3>
+                <p>Explore more technical builds, AI systems, and tooling projects.</p>
+              </div>
+              <span className="home-project-card__arrow" aria-hidden="true"></span>
+            </AppLink>
           </motion.article>
         </div>
       </motion.section>
