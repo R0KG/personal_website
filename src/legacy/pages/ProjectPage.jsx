@@ -11,9 +11,8 @@ const footerLinks = [
 ];
 
 const featuredRepo = {
-  name: 'phantom-wallet-replica',
-  repoUrl: 'https://github.com/R0KG/phantom-wallet-replica',
-  liveUrl: 'https://phantom-wallet-replica.vercel.app',
+  name: 'RustFlow',
+  repoUrl: 'https://github.com/R0KG/Rustlflow',
 };
 
 export default function ProjectPage() {
@@ -32,8 +31,8 @@ export default function ProjectPage() {
           <div>
             <h1>Projects</h1>
             <p>
-              Featured repository detail from the public GitHub portfolio, centered on shipped
-              frontend execution and UI fidelity.
+              A selected view into the codebases behind this portfolio: distributed systems, AI
+              security controls, and reproducible technical experiments.
             </p>
           </div>
           <div className="project-view-toggle">
@@ -48,21 +47,22 @@ export default function ProjectPage() {
             <div className="project-main-card__body">
               <div className="project-main-card__meta">
                 <h2>{featuredRepo.name}</h2>
-                <span>Live project</span>
+                <span>Public repository</span>
               </div>
               <p>
-                A public TypeScript build focused on recreating the Phantom wallet interface with a
-                deployable frontend. This is the clearest current example of polished UI delivery
-                in the repository set.
+                A Rust service for running limited SQL queries over uploaded CSV telemetry. An Axum
+                API stores metadata, NATS JetStream distributes partition tasks, DataFusion runs
+                queries, and MinIO stores immutable results.
               </p>
               <div className="project-tags">
-                <span>TypeScript</span>
-                <span>Frontend</span>
-                <span>Vercel</span>
+                <span>Rust</span>
+                <span>Axum</span>
+                <span>NATS</span>
+                <span>DataFusion</span>
               </div>
               <div className="project-main-card__footer">
-                <em>Result: public repo plus live deployment</em>
-                <AppLink to={featuredRepo.liveUrl} target="_blank" rel="noreferrer" aria-label="Open live project">
+                <em>Focus: bounded distributed data processing</em>
+                <AppLink to={featuredRepo.repoUrl} target="_blank" rel="noreferrer" aria-label="Open RustFlow repository">
                   ↗
                 </AppLink>
               </div>
@@ -72,12 +72,12 @@ export default function ProjectPage() {
           <aside className="project-side-card">
             <h3>Repository access</h3>
             <p>
-              Source code is public on GitHub and the deployment is available separately, so both
-              implementation and output can be reviewed.
+              The source, local Docker setup, architecture notes, and API flow are available in the
+              public repository.
             </p>
             <div className="project-side-card__stack">
               <span>Links</span>
-              <p>GitHub / Live Demo</p>
+              <p>GitHub / Architecture / API</p>
             </div>
             <AppLink className="project-outline-button" to={featuredRepo.repoUrl} target="_blank" rel="noreferrer">
               Open Repo
@@ -87,30 +87,30 @@ export default function ProjectPage() {
           <article className="project-mini-card project-mini-card--peach">
             <div className="project-mini-card__heading">
               <span className="project-mini-icon"></span>
-              <h3>trans_ansamble</h3>
+              <h3>Agent Security Evals</h3>
             </div>
             <p>
-              Python transformer implementation used as a clean model-architecture reference in the
-              public repository set.
+              Deterministic security checks for planned AI-agent tool calls, using safe synthetic
+              fixtures for injection, data handling, and approval boundaries.
             </p>
             <div className="project-mini-card__meta">
               <div><span>Stack</span><strong>Python</strong></div>
-              <div><span>Focus</span><strong>Transformer</strong></div>
+              <div><span>Focus</span><strong>AI security</strong></div>
             </div>
           </article>
 
           <article className="project-mini-card">
             <div className="project-mini-card__heading">
               <span className="project-mini-icon project-mini-icon--db"></span>
-              <h3>deepfake-guardian</h3>
+              <h3>EvoLife</h3>
             </div>
             <p>
-              Public JavaScript project oriented around authenticity review and defensive analysis
-              workflows.
+              A CPU-first artificial ecosystem prototype with mutation, lineage tracking, persistent
+              observations, and reproducible simulation runs.
             </p>
             <div className="project-mini-card__meta">
-              <div><span>Stack</span><strong>JavaScript</strong></div>
-              <div><span>Focus</span><strong>Detection</strong></div>
+              <div><span>Stack</span><strong>Python / JAX</strong></div>
+              <div><span>Focus</span><strong>Simulation</strong></div>
             </div>
           </article>
         </div>
@@ -125,13 +125,13 @@ export default function ProjectPage() {
                 Portfolio Sync
               </h2>
               <p>
-                Portfolio cards now resolve to actual GitHub repositories and live URLs where
-                available, rather than placeholder internal links.
+                The portfolio now reflects active codebases, with public repository links where the
+                source can be reviewed and clear labels where a project remains local.
               </p>
             </div>
             <div className="project-manifest__stats">
-              <div><strong>3</strong><span>Repo cards</span></div>
-              <div><strong>1</strong><span>Live demo</span></div>
+              <div><strong>5</strong><span>Codebases</span></div>
+              <div><strong>4</strong><span>Public repos</span></div>
             </div>
           </div>
         </motion.section>
