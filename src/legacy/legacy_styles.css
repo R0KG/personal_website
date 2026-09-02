@@ -4266,6 +4266,11 @@ textarea {
   word-break: break-word;
 }
 
+.portfolio-chip-button--static {
+  cursor: default;
+  opacity: 0.74;
+}
+
 .portfolio-icon-button {
   width: 3rem;
   background: #1b1b21;
@@ -5775,6 +5780,12 @@ textarea {
   .services-page,
   .contact-page {
     padding: 5.5rem 1.25rem 2rem;
+  }
+
+  .portfolio-hero h1 {
+    font-size: clamp(1.5rem, 7vw, 1.75rem);
+    line-height: 1;
+    overflow-wrap: normal;
   }
 
   .portfolio-card,

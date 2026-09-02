@@ -48,9 +48,6 @@ export default function HomePage() {
               experimental AI tools.
             </p>
             <div className="home-hero__actions">
-              <AppLink className="home-btn home-btn--primary" to="/Roman_Merkulov_CV-1.pdf" download>
-                Download CV
-              </AppLink>
               <AppLink className="home-btn home-btn--secondary" to="/portfolio">
                 Selected Work
               </AppLink>
@@ -79,7 +76,7 @@ export default function HomePage() {
         <div className="home-section-head">
           <div>
             <h2>Selected Works</h2>
-            <p>Professional deployments in cybersecurity, AI, and engineering media systems.</p>
+            <p>Current codebases in distributed systems, AI security, and technical research.</p>
           </div>
           <AppLink className="home-section-link" to="/portfolio">
             View_all_log
@@ -90,43 +87,44 @@ export default function HomePage() {
           <motion.article className="home-project-card home-project-card--large" {...fadeUp(0.1)}>
             <span className="home-project-card__bar"></span>
             <div className="home-project-card__meta">
-              <span>OniShield interface</span>
+              <span>RustFlow service</span>
               <span className="home-project-card__corner"></span>
             </div>
-            <h3>Intrusion detection terminal</h3>
+            <h3>Distributed telemetry queries</h3>
             <p>
-              Enterprise-grade security hardening for studio-scale architecture. Tightened analyst
-              flows, risk framing, and provider-side incident triage.
+              A Rust service that partitions uploaded CSV telemetry and coordinates query workers
+              through an explicit API, queue, and storage pipeline.
             </p>
             <div className="home-project-tags">
-              <span>Security</span>
-              <span>Platform</span>
+              <span>Rust</span>
+              <span>Data systems</span>
             </div>
-            <div className="home-project-card__caption">active analyst surface / hardened detection flow</div>
+            <div className="home-project-card__caption">Axum + NATS + DataFusion</div>
             <div className="home-project-card__ghost"></div>
           </motion.article>
 
           <motion.article className="home-project-card home-project-card--blue" {...fadeUp(0.15)}>
-            <span className="home-project-card__eyebrow">AI System</span>
-            <h3>Neural mesh</h3>
+            <span className="home-project-card__eyebrow">AI Security</span>
+            <h3>Agent Security Evals</h3>
             <p>
-              Structured model review, operator feedback, and deployment safety into one cleaner
-              surface.
+              A deterministic harness for checking whether proposed agent tool calls respect trust,
+              data, and approval boundaries.
             </p>
             <div className="home-project-card__screen">
-              <img src={neuralMeshImage} alt="Abstract blue neural network style interface texture" />
+              <img src={neuralMeshImage} alt="Abstract network texture representing AI-agent evaluation" />
             </div>
-            <div className="home-project-card__caption">evaluation + oversight</div>
+            <div className="home-project-card__caption">synthetic fixtures + regression tests</div>
           </motion.article>
 
           <motion.article className="home-project-card home-project-card--peach" {...fadeUp(0.2)}>
             <span className="home-project-card__bar"></span>
-            <span className="home-project-card__eyebrow">Core-flow</span>
-            <h3>Engine module</h3>
+            <span className="home-project-card__eyebrow">Research prototype</span>
+            <h3>EvoLife ecosystem</h3>
             <p>
-              Productized account state, orchestration, and low-friction system visibility.
+              A reproducible, CPU-first artificial ecosystem with mutation, species tracking, and
+              persistent simulation history.
             </p>
-            <div className="home-project-card__caption">systems + orchestration</div>
+            <div className="home-project-card__caption">Python + JAX + event history</div>
           </motion.article>
 
           <motion.article className="home-project-card home-project-card--accent" {...fadeUp(0.25)}>

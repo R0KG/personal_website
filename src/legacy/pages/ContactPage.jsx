@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@nsmr/pixelart-react';
-import { FaFileArrowDown, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
+import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
 import { SiTelegram } from 'react-icons/si';
 import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
 import { fadeUp } from '../../lib/motion';
-import cvPdf from '../../../Roman_Merkulov_CV-1.pdf';
 
 const footerLinks = [
   { label: 'Home', to: '/' },
@@ -139,15 +138,6 @@ export default function ContactPage() {
                   <div>
                     <strong>Telegram_channel</strong>
                     <p><AppLink to={telegramUrl} target="_blank" rel="noreferrer">{telegramLabel}</AppLink></p>
-                  </div>
-                </div>
-                <div>
-                  <span className="contact-info-icon contact-info-icon--gold contact-info-icon--brand">
-                    <FaFileArrowDown aria-hidden="true" />
-                  </span>
-                  <div>
-                    <strong>CV_archive</strong>
-                    <p><AppLink to={cvPdf} download="Roman_Merkulov_CV.pdf" target="_blank" rel="noreferrer">Download PDF dossier</AppLink></p>
                   </div>
                 </div>
               </div>

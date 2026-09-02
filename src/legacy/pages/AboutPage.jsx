@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaFileArrowDown } from 'react-icons/fa6';
 import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
 import { fadeUp } from '../../lib/motion';
 import cvImage from '../../../cv_image.jpg';
-import cvPdf from '../../../Roman_Merkulov_CV-1.pdf';
 
 const footerLinks = [
   { label: 'Home', to: '/' },
@@ -69,16 +67,6 @@ export default function AboutPage() {
               <StatBar label="AI [LLM/ML]" value="85%" tone="gold" />
             </div>
             <div className="about-actions">
-              <AppLink
-                className="home-btn home-btn--primary"
-                to={cvPdf}
-                download="Roman_Merkulov_CV.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaFileArrowDown aria-hidden="true" />
-                <span>Download_CV.pdf</span>
-              </AppLink>
               <AppLink className="home-btn home-btn--secondary" to="/contact">
                 Init_Contact.exe
               </AppLink>
