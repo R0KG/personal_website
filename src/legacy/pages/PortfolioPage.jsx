@@ -13,53 +13,32 @@ const footerLinks = [
 
 const projects = [
   {
-    id: '001',
-    name: 'RustFlow',
-    summary: 'Distributed Rust service for querying uploaded CSV telemetry with an Axum API, worker queue, and object storage.',
-    tags: ['Rust', 'Axum', 'DataFusion'],
-    result: 'Purpose: learn and operate a bounded distributed data-processing workflow.',
-    tone: 'featured',
-    icon: 'chart-multiple',
-    repoUrl: 'https://github.com/R0KG/Rustlflow',
+    id: '001', name: 'Enterprise AI Lab',
+    summary: 'A document question-answering lab that extracts PDF text, finds relevant passages, and returns answers with sources.',
+    tags: ['Python', 'RAG', 'pgvector'], result: 'Focus: document ingestion, retrieval, and evaluation.',
+    tone: 'featured', icon: 'lightbulb', image: '/images/projects/ai-lab.webp',
+    repoUrl: 'https://github.com/R0KG/ai_lab',
   },
   {
-    id: '002',
-    name: 'Agent Security Evals',
-    summary: 'Deterministic evaluation harness for tool-using AI agents, with synthetic fixtures for prompt injection, data loss, and approval checks.',
-    tags: ['Python', 'AI Security', 'Testing'],
-    result: 'Purpose: turn agent security boundaries into repeatable regression tests.',
-    tone: 'gold',
-    icon: 'shield',
+    id: '002', name: 'Agent Orchestration',
+    summary: 'A TypeScript experiment coordinating parallel AI sessions and passing their results to a final coordinator.',
+    tags: ['TypeScript', 'Agents', 'Pi SDK'], result: 'Focus: explicit handoffs, failure handling, and inspectable runs.',
+    tone: 'gold', icon: 'code', image: '/images/projects/orchestration.webp',
+    repoUrl: 'https://github.com/R0KG/multi_agent/tree/main/pi-lab',
+  },
+  {
+    id: '003', name: 'Agent Security Evals',
+    summary: 'A deterministic evaluation harness for agent tool calls, using synthetic cases for injection, data handling, and approvals.',
+    tags: ['Python', 'AI Security', 'Testing'], result: 'Focus: repeatable security checks at the tool boundary.',
+    tone: 'gold', icon: 'shield', image: '/images/projects/security.webp',
     repoUrl: 'https://github.com/R0KG/agent-security-evals',
   },
   {
-    id: '003',
-    name: 'Bughunt Platform',
-    summary: 'Policy-gated security research platform for scoped reconnaissance, durable evidence, and reviewable reports.',
-    tags: ['Python', 'Security', 'Policy'],
-    result: 'Purpose: keep controlled research workflows bounded, observable, and evidence-led.',
-    tone: 'gold',
-    icon: 'shield',
-    repoUrl: 'https://github.com/R0KG/happy_cyber',
-  },
-  {
-    id: '004',
-    name: 'FounderOrFraud',
-    summary: 'Full-stack prototype for company assessment workflows, with scan, monitoring, report, webhook, and billing surfaces.',
-    tags: ['Next.js', 'FastAPI', 'PostgreSQL'],
-    result: 'Purpose: explore an operational product surface from web UI through backend tooling.',
-    tone: 'featured',
-    icon: 'wallet',
-    repoUrl: 'https://github.com/R0KG/fraud',
-  },
-  {
-    id: '005',
-    name: 'EvoLife',
-    summary: 'CPU-first artificial ecosystem prototype with inherited parameters, mutation, species tracking, and persistent run history.',
-    tags: ['Python', 'JAX', 'Simulation'],
-    result: 'Local research prototype: reproducible ecosystem experiments and event analysis.',
-    tone: 'gold',
-    icon: 'chart-multiple',
+    id: '004', name: 'RustFlow',
+    summary: 'A distributed Rust service for querying uploaded CSV telemetry with an API, worker queue, and object storage.',
+    tags: ['Rust', 'Axum', 'DataFusion'], result: 'Focus: bounded distributed data processing.',
+    tone: 'gold', icon: 'chart-multiple', image: '/images/projects/rustflow.webp',
+    repoUrl: 'https://github.com/R0KG/Rustlflow',
   },
 ];
 
@@ -84,8 +63,8 @@ export default function PortfolioPage() {
           </h1>
           <div className="portfolio-hero__bar"></div>
           <p>
-            Selected codebases across distributed systems, AI security, research tooling, and
-            simulation. Public repositories are linked where available.
+            Selected experiments in AI engineering, agent security, and distributed systems.
+            Each project is available to explore on GitHub.
           </p>
         </div>
 
@@ -108,6 +87,7 @@ export default function PortfolioPage() {
                 </span>
                 <span className="portfolio-card__id">ID: {project.id}</span>
               </div>
+              <div className="portfolio-card__art"><img src={project.image} alt="" loading="lazy" /></div>
               <h2>{project.name}</h2>
               <p>{project.summary}</p>
               <div className="portfolio-tags">
@@ -154,8 +134,8 @@ export default function PortfolioPage() {
           </div>
           <div className="portfolio-manifesto__stats">
             <div><span>Featured profile</span><strong>R0KG</strong></div>
-            <div><span>Primary stack</span><strong>Rust / Python / TS</strong></div>
-            <div><span>Portfolio set</span><strong>4 public + 1 local</strong></div>
+            <div><span>Primary stack</span><strong>Python / TS / Rust</strong></div>
+            <div><span>Portfolio set</span><strong>4 public repos</strong></div>
           </div>
         </motion.section>
       </motion.section>
