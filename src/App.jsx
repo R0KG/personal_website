@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import PixelWelcome from './legacy/components/PixelWelcome';
 
 const HomePage = lazy(() => import('./legacy/pages/HomePage'));
 const AboutPage = lazy(() => import('./legacy/pages/AboutPage'));
@@ -47,5 +48,5 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  return <AnimatedRoutes />;
+  return <><PixelWelcome /><AnimatedRoutes /></>;
 }

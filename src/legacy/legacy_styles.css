@@ -5913,3 +5913,110 @@ textarea {
   word-break: normal;
   hyphens: auto;
 }
+
+/* A short, pixel-art title reveal for the first visit of a session. */
+.pixel-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 24px;
+  background: #111218;
+  pointer-events: none;
+  animation: intro-transition 2.8s ease-out both;
+}
+.pixel-intro__grid {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 55%, #243341 0%, #111218 62%);
+}
+.pixel-intro__grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .32;
+  background: linear-gradient(#8fcdfa10 1px, transparent 1px), linear-gradient(90deg, #8fcdfa10 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.pixel-intro__scene {
+  position: relative;
+  width: min(100%, 790px);
+  padding: 12px 0;
+  text-align: center;
+  font-family: var(--home-font-display);
+}
+.pixel-intro__eyebrow, .pixel-intro__subtitle {
+  display: block;
+  font: 9px/1.7 var(--home-font-display);
+  color: #cfc6ae;
+  letter-spacing: .1em;
+}
+.pixel-intro__eyebrow { color: #8fcdfa; animation: intro-label 450ms steps(3, end) both; }
+.pixel-intro__line {
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--home-font-display);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+.pixel-intro__line--hello {
+  margin-top: 27px;
+  color: #e4e1ea;
+  font-size: clamp(19px, 4vw, 40px);
+  animation: intro-type 450ms steps(8, end) 200ms both;
+}
+.pixel-intro__line--name {
+  color: #f4d03f;
+  font-size: clamp(38px, 8.6vw, 88px);
+  animation: intro-type 550ms steps(6, end) 650ms both;
+}
+.pixel-intro__dot { color: #8fcdfa; }
+.pixel-intro__rule {
+  height: 4px;
+  width: 84px;
+  margin: 25px auto;
+  background: #f4d03f;
+  animation: intro-rule 400ms steps(6, end) 1s both;
+}
+.pixel-intro__subtitle { animation: intro-label 400ms steps(3, end) 1.15s both; }
+.pixel-intro__topics {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 26px;
+  color: #8d9298;
+  font: 7px/1.6 var(--home-font-display);
+  animation: intro-label 400ms steps(3, end) 1.35s both;
+}
+.pixel-intro__topics span + span::before { content: '✦'; color: #f4d03f; margin-right: 18px; }
+.pixel-intro__cursor { color: #f4d03f; animation: intro-cursor 500ms steps(2, start) 3; }
+.pixel-intro__pixels { position: absolute; top: 34%; display: flex; gap: 9px; }
+.pixel-intro__pixels--left { left: 0; }
+.pixel-intro__pixels--right { right: 0; flex-direction: row-reverse; }
+.pixel-intro__pixels i { display: block; width: 7px; height: 7px; background: #8fcdfa; animation: intro-pixel 750ms steps(4, end) both, intro-sparkle 1s steps(3, end) 1s 1; }
+.pixel-intro__pixels i:nth-child(2) { margin-top: 18px; background: #f4d03f; animation-delay: .1s; }
+.pixel-intro__pixels i:nth-child(3) { margin-top: -14px; animation-delay: .2s; }
+.pixel-intro__pixels i:nth-child(4) { margin-top: 26px; background: #f4d03f; animation-delay: .3s; }
+@keyframes intro-transition { 0%, 79% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes intro-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes intro-label { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes intro-rule { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes intro-pixel { from { opacity: 0; transform: translateY(20px); } to { opacity: .8; transform: translateY(0); } }
+@keyframes intro-sparkle { 50% { opacity: .25; transform: translateY(-6px); } }
+@keyframes intro-cursor { 50% { opacity: 0; } }
+@media (max-width: 600px) {
+  .pixel-intro__scene { width: 100%; }
+  .pixel-intro__pixels { top: 26%; gap: 5px; }
+  .pixel-intro__pixels i { width: 5px; height: 5px; }
+  .pixel-intro__eyebrow, .pixel-intro__subtitle { font-size: 7px; }
+  .pixel-intro__line--hello { margin-top: 30px; }
+  .pixel-intro__topics { gap: 9px; font-size: 6px; }
+  .pixel-intro__topics span + span::before { margin-right: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pixel-intro, .pixel-intro__scene *, .pixel-intro__pixels i { animation: none; }
+}
