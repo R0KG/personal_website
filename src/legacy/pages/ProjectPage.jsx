@@ -11,8 +11,8 @@ const footerLinks = [
 ];
 
 const featuredRepo = {
-  name: 'RustFlow',
-  repoUrl: 'https://github.com/R0KG/Rustlflow',
+  name: 'Enterprise AI Lab',
+  repoUrl: 'https://github.com/R0KG/ai_lab',
 };
 
 export default function ProjectPage() {
@@ -31,8 +31,7 @@ export default function ProjectPage() {
           <div>
             <h1>Projects</h1>
             <p>
-              A selected view into the codebases behind this portfolio: distributed systems, AI
-              security controls, and reproducible technical experiments.
+              A selected view into the codebases behind this portfolio: AI engineering, agent security, and distributed systems.
             </p>
           </div>
           <div className="project-view-toggle">
@@ -50,19 +49,18 @@ export default function ProjectPage() {
                 <span>Public repository</span>
               </div>
               <p>
-                A Rust service for running limited SQL queries over uploaded CSV telemetry. An Axum
-                API stores metadata, NATS JetStream distributes partition tasks, DataFusion runs
-                queries, and MinIO stores immutable results.
+                A document AI lab that extracts text from PDFs, stores embeddings in PostgreSQL,
+                retrieves relevant passages, and generates answers with sources.
               </p>
               <div className="project-tags">
-                <span>Rust</span>
-                <span>Axum</span>
-                <span>NATS</span>
-                <span>DataFusion</span>
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>RAG</span>
+                <span>pgvector</span>
               </div>
               <div className="project-main-card__footer">
-                <em>Focus: bounded distributed data processing</em>
-                <AppLink to={featuredRepo.repoUrl} target="_blank" rel="noreferrer" aria-label="Open RustFlow repository">
+                <em>Focus: document retrieval and question answering</em>
+                <AppLink to={featuredRepo.repoUrl} target="_blank" rel="noreferrer" aria-label="Open Enterprise AI Lab repository">
                   ↗
                 </AppLink>
               </div>
@@ -72,8 +70,8 @@ export default function ProjectPage() {
           <aside className="project-side-card">
             <h3>Repository access</h3>
             <p>
-              The source, local Docker setup, architecture notes, and API flow are available in the
-              public repository.
+              The source, local Docker setup, API workflow, and retrieval evaluation are available
+              in the public repository.
             </p>
             <div className="project-side-card__stack">
               <span>Links</span>
@@ -102,15 +100,15 @@ export default function ProjectPage() {
           <article className="project-mini-card">
             <div className="project-mini-card__heading">
               <span className="project-mini-icon project-mini-icon--db"></span>
-              <h3>EvoLife</h3>
+              <h3>Agent Orchestration</h3>
             </div>
             <p>
-              A CPU-first artificial ecosystem prototype with mutation, lineage tracking, persistent
-              observations, and reproducible simulation runs.
+              A TypeScript experiment coordinating parallel AI sessions and combining their results
+              with an explicit handoff.
             </p>
             <div className="project-mini-card__meta">
-              <div><span>Stack</span><strong>Python / JAX</strong></div>
-              <div><span>Focus</span><strong>Simulation</strong></div>
+              <div><span>Stack</span><strong>TypeScript / Pi</strong></div>
+              <div><span>Focus</span><strong>AI workflows</strong></div>
             </div>
           </article>
         </div>
@@ -130,7 +128,7 @@ export default function ProjectPage() {
               </p>
             </div>
             <div className="project-manifest__stats">
-              <div><strong>5</strong><span>Codebases</span></div>
+              <div><strong>4</strong><span>Codebases</span></div>
               <div><strong>4</strong><span>Public repos</span></div>
             </div>
           </div>

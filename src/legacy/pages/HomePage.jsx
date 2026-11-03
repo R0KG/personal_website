@@ -4,7 +4,6 @@ import AppLink from '../components/AppLink';
 import PageShell from '../components/PageShell';
 import AmbientCareerBackground from '../components/AmbientCareerBackground';
 import { fadeUp } from '../../lib/motion';
-import neuralMeshImage from '../../../assets/neural-mesh-pexels.jpg';
 
 const footerLinks = [
   { label: 'Portfolio', to: '/portfolio' },
@@ -76,66 +75,29 @@ export default function HomePage() {
         <div className="home-section-head">
           <div>
             <h2>Selected Works</h2>
-            <p>Current codebases in distributed systems, AI security, and technical research.</p>
+            <p>Experiments in AI engineering, agent security, and the systems behind them.</p>
           </div>
           <AppLink className="home-section-link" to="/portfolio">
             View_all_log
           </AppLink>
         </div>
 
-        <div className="home-project-grid">
-          <motion.article className="home-project-card home-project-card--large" {...fadeUp(0.1)}>
-            <span className="home-project-card__bar"></span>
-            <div className="home-project-card__meta">
-              <span>RustFlow service</span>
-              <span className="home-project-card__corner"></span>
-            </div>
-            <h3>Distributed telemetry queries</h3>
-            <p>
-              A Rust service that partitions uploaded CSV telemetry and coordinates query workers
-              through an explicit API, queue, and storage pipeline.
-            </p>
-            <div className="home-project-tags">
-              <span>Rust</span>
-              <span>Data systems</span>
-            </div>
-            <div className="home-project-card__caption">Axum + NATS + DataFusion</div>
-            <div className="home-project-card__ghost"></div>
-          </motion.article>
-
-          <motion.article className="home-project-card home-project-card--blue" {...fadeUp(0.15)}>
-            <span className="home-project-card__eyebrow">AI Security</span>
-            <h3>Agent Security Evals</h3>
-            <p>
-              A deterministic harness for checking whether proposed agent tool calls respect trust,
-              data, and approval boundaries.
-            </p>
-            <div className="home-project-card__screen">
-              <img src={neuralMeshImage} alt="Abstract network texture representing AI-agent evaluation" />
-            </div>
-            <div className="home-project-card__caption">synthetic fixtures + regression tests</div>
-          </motion.article>
-
-          <motion.article className="home-project-card home-project-card--peach" {...fadeUp(0.2)}>
-            <span className="home-project-card__bar"></span>
-            <span className="home-project-card__eyebrow">Research prototype</span>
-            <h3>EvoLife ecosystem</h3>
-            <p>
-              A reproducible, CPU-first artificial ecosystem with mutation, species tracking, and
-              persistent simulation history.
-            </p>
-            <div className="home-project-card__caption">Python + JAX + event history</div>
-          </motion.article>
-
-          <motion.article className="home-project-card home-project-card--accent" {...fadeUp(0.25)}>
-            <AppLink className="home-project-card__accent-link" to="/portfolio" aria-label="View the full portfolio">
-              <div>
-                <h3>Want to see more?</h3>
-                <p>Explore more technical builds, AI systems, and tooling projects.</p>
+        <div className="home-project-grid home-project-grid--illustrated">
+          {[
+            { title: 'Enterprise AI Lab', category: 'Document AI', image: 'ai-lab', summary: 'A RAG lab for exploring PDFs, retrieval, and answers grounded in source passages.', tags: 'Python + FastAPI + pgvector' },
+            { title: 'Agent Orchestration', category: 'AI Engineering', image: 'orchestration', summary: 'Parallel AI sessions and explicit handoffs, with traces to inspect each run.', tags: 'TypeScript + Pi SDK' },
+            { title: 'Agent Security Evals', category: 'AI Security', image: 'security', summary: 'Repeatable checks for tool calls, untrusted instructions, and approval boundaries.', tags: 'Python + synthetic fixtures' },
+          ].map((project, index) => (
+            <motion.article key={project.title} className="home-project-card home-project-card--illustrated" {...fadeUp(0.1 + index * 0.05)}>
+              <div className="home-project-card__art"><img src={`/images/projects/${project.image}.webp`} alt="" loading="lazy" /></div>
+              <div className="home-project-card__content">
+                <span className="home-project-card__eyebrow">{project.category}</span>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+                <div className="home-project-card__caption">{project.tags}</div>
               </div>
-              <span className="home-project-card__arrow" aria-hidden="true"></span>
-            </AppLink>
-          </motion.article>
+            </motion.article>
+          ))}
         </div>
       </motion.section>
 
