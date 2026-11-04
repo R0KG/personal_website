@@ -908,6 +908,9 @@ textarea {
 }
 
 .home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--home-font-display);
   font-size: 16px;
   line-height: 1;
@@ -915,6 +918,15 @@ textarea {
   text-transform: uppercase;
   color: #f4d03f;
   white-space: nowrap;
+}
+
+.home-brand__logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex: none;
+  mix-blend-mode: lighten;
 }
 
 .home-main-nav {
@@ -2361,9 +2373,14 @@ textarea {
   }
 
   .home-header {
-    align-items: flex-start;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .home-brand__logo {
+    width: 64px;
+    height: 64px;
   }
 
   .home-main-nav {

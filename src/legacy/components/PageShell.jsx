@@ -22,14 +22,13 @@ export default function PageShell({
   footerText,
   footerLinks,
   fabHref = '/contact',
-  brandLabel = 'ANALOG_EXECUTIVE',
   children,
 }) {
   return (
     <div className={activeKey === 'index' ? 'home-shell home-page' : 'home-shell'}>
       <header className="home-header">
-        <Link className="home-brand" to="/">
-          {brandLabel}
+        <Link className="home-brand" to="/" aria-label="Roman Merk home">
+          <img className="home-brand__logo" src="/images/branding/roman-merk-rm-logo.png" alt="" />
         </Link>
         <AppLink className="home-header-terminal home-header-terminal--icon" to={fabHref} aria-label="Open contact channel">
           <Icon className="home-inline-icon" aria-hidden="true" name="mail" />
