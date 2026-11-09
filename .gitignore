@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build output (CI builds and deploys it)
+dist/
+
+# Local scratch, screenshots, tooling output
+tmp/
+output/
+.playwright-cli/
+
+# OS / misc
+.DS_Store
+*.torrent
