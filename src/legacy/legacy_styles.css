@@ -6244,3 +6244,17 @@ textarea {
 .research-cases button[data-outcome=attack_verified][aria-pressed=true]{border-color:#f4d03f}
 /* Poster shown until the pixel office has loaded */
 .swarm-stage{background:#101319 url('/images/projects/research-lab.webp') center/cover no-repeat}
+
+/* 404 page */
+.notfound{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:18px;max-width:900px;margin:0 auto;padding:clamp(32px,8vw,88px) clamp(16px,4vw,40px)}
+.notfound__tag{padding:8px 12px;border:2px solid #343a40;background:#15171d;color:#f4d03f;font:700 11px/1.3 var(--home-font-display);letter-spacing:.06em}
+.notfound__code{margin:0;color:#f4d03f;font:400 clamp(72px,16vw,160px)/1 var(--home-font-display);text-shadow:6px 6px 0 #080a0d,-3px 0 0 #8fcdfa66;animation:notfound-flicker 3.2s steps(1) infinite}
+.notfound h1{margin:0;color:#e8e8ee;font:400 clamp(16px,2.6vw,26px)/1.5 var(--home-font-display)}
+.notfound__lead{max-width:56ch;margin:0;color:#a6a7ae;font:500 16px/1.7 'Space Grotesk',sans-serif}
+.notfound__path{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;color:#8c8c96;font:600 12px/1.4 'Space Grotesk',sans-serif}
+.notfound__path span{color:#8fcdfa;letter-spacing:.08em}
+.notfound__path code{padding:4px 8px;border:1px solid #343a40;background:#111218;color:#e8e8ee;font:500 13px/1.4 ui-monospace,Menlo,monospace;overflow-wrap:anywhere}
+.notfound__actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px}
+@keyframes notfound-flicker{0%,92%,96%{opacity:1}94%{opacity:.35}98%{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.notfound__code{animation:none}}
+@media(max-width:600px){.notfound__actions{flex-direction:column;align-items:stretch;width:100%}}
