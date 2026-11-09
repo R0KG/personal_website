@@ -6327,3 +6327,20 @@ textarea {
 .research-sessions__stop{font-size:9px;line-height:1.8}
 .research-process__heading h2,.research-process__limits h3{font-family:var(--home-font-body),'Space Grotesk',sans-serif}
 @media(max-width:600px){.research-sessions__stats strong{font-size:18px}.research-sessions__stats span{font-size:7px}.research-process__flow dt{font-size:7px}}
+
+/* Research lab: headings and short labels use the site's pixel display font (matches About / Portfolio / Services). Prose stays Space Grotesk. */
+.research-replay h2,.research-replay h3,.research-process__heading h2,.research-process__limits h3,.research-process__flow h3{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400;letter-spacing:0;text-transform:none}
+.research-brief h2{font-size:13px;line-height:1.7}
+.research-process__heading h2{font-size:clamp(15px,2vw,20px);line-height:1.6}
+.research-process__flow h3,.research-process__limits h3{font-size:12px;line-height:1.7}
+.research-process-nav a,.research-keys,.research-brief__stats,.research-replay summary,.research-evidence strong,.research-process__limits strong,.research-sessions__detail p>strong:first-child,.research-proof dd,.research-cases small,.research-board__row>span:first-child{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400;letter-spacing:0}
+.research-process-nav a{font-size:9px;line-height:1.8}
+.research-keys,.research-brief__stats{font-size:8px;line-height:1.9}
+.research-replay summary{font-size:9px;line-height:1.8}
+.research-evidence strong,.research-process__limits strong,.research-sessions__detail p>strong:first-child{font-size:9px;line-height:1.8}
+.research-proof dd,.research-cases small{font-size:7px;line-height:1.8}
+.research-board__row>span:first-child{font-size:7px;line-height:1.8}
+button{font-family:inherit}
+@media(max-width:600px){.research-brief h2{font-size:11px}.research-process__heading h2{font-size:13px}.research-process__flow h3,.research-process__limits h3{font-size:10px}}
+.research-replay .research-brief p.research-brief__stats{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400;font-size:8px;line-height:1.9;letter-spacing:0}
+.research-replay .research-cases button small{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400;font-size:7px;line-height:1.8;letter-spacing:0}
