@@ -6315,3 +6315,15 @@ textarea {
   .swarm-stage .swarm-boundary span{font-size:5px}
   .swarm-stage .research-office__alert strong{font-size:6px}
 }
+
+/* Research process section: short labels use the pixel display font, sentences keep the body font */
+.research-process__number,.research-process__flow strong,.research-process__flow dt,.research-sessions__selector button,.research-sessions__stats strong,.research-sessions__stats span,.research-sessions__stop{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400}
+.research-process__number{font-size:11px}
+.research-process__flow strong{display:block;font-size:9px;line-height:1.8;letter-spacing:0}
+.research-process__flow dt{font-size:8px;line-height:1.8;margin-top:6px}
+.research-sessions__selector button{font-size:10px;line-height:1.6}
+.research-sessions__stats strong{font-size:24px;line-height:1.4}
+.research-sessions__stats span{font-size:8px;line-height:1.8;display:block}
+.research-sessions__stop{font-size:9px;line-height:1.8}
+.research-process__heading h2,.research-process__limits h3{font-family:var(--home-font-body),'Space Grotesk',sans-serif}
+@media(max-width:600px){.research-sessions__stats strong{font-size:18px}.research-sessions__stats span{font-size:7px}.research-process__flow dt{font-size:7px}}
