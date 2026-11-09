@@ -1,0 +1,57 @@
+diff --git a/crates/pixtuoid-web/src/lib.rs b/crates/pixtuoid-web/src/lib.rs
+index 242938e..fa88665 100644
+--- a/crates/pixtuoid-web/src/lib.rs
++++ b/crates/pixtuoid-web/src/lib.rs
+@@ -204,9 +204,9 @@ impl Office {
+             fit,
+             seed: u64::from(seed),
+             reducer: Reducer::new().counting(pixtuoid_scene::tally::local_day),
+-            beats: hero_script(),
++            beats: Vec::new(),
+             cursor: 0,
+-            presence_beats: lobster_beats(),
++            presence_beats: Vec::new(),
+             presence_cursor: 0,
+             epoch: None,
+             hires: VisitorHires::default(),
+@@ -341,6 +341,19 @@ impl Office {
+         self.hires.try_hire(base, &self.scene)
+     }
+ 
++    /// Map an explicit replay step to the four research roles.
++    pub fn replay_step(&mut self, step: u32, now_ms: f64) {
++        let now = pixtuoid_scene::anim::from_epoch_ms(now_ms);
++        for i in 0..4 {
++            self.reducer.apply(&mut self.scene, script::replay_start(i), now, Transport::Jsonl);
++            self.reducer.apply(&mut self.scene, script::replay_end(i), now, Transport::Hook);
++        }
++        let role = match step { 0 => 0, 1 => 1, 2 => 2, 3 => 3, 4 => 2, 5 => 3, 6 => 0, _ => 3 };
++        let labels = ["Hypothesis", "Design cases", "Clean baseline", "Verify baseline", "Injected case", "Verify result", "Fidelity review", "Session stopped"];
++        let label = labels.get(step as usize).copied().unwrap_or("Session stopped");
++        self.reducer.apply(&mut self.scene, script::replay_tool(role, label), now, Transport::Hook);
++    }
++
+     /// Force the weather [`WeatherPolicy::from_name`] names, or `None` (or an
+     /// unrecognized name) to follow the clock-based cycle.
+     pub fn set_weather(&mut self, name: Option<String>) {
+diff --git a/crates/pixtuoid-web/src/script.rs b/crates/pixtuoid-web/src/script.rs
+index 0d010ce..71d172e 100644
+--- a/crates/pixtuoid-web/src/script.rs
++++ b/crates/pixtuoid-web/src/script.rs
+@@ -69,6 +69,16 @@ fn session_start(i: usize) -> AgentEvent {
+     }
+ }
+ 
++pub(crate) fn replay_start(i: usize) -> AgentEvent { session_start(i) }
++
++pub(crate) fn replay_tool(i: usize, label: &str) -> AgentEvent {
++    AgentEvent::tool_use_start(cast_id(i), Some(format!("replay-{i}")), Some(ToolDetail::Generic { display: label.to_string() }))
++}
++
++pub(crate) fn replay_end(i: usize) -> AgentEvent {
++    AgentEvent::ToolUseEnd { agent_id: cast_id(i), tool_use_id: Some(format!("replay-{i}")) }
++}
++
+ /// One scripted call's length. Calls chain back to back: the reducer settles a
+ /// slot the moment its call ends, so any gap between them shows as Idle.
+ const BURST_MS: u64 = 1200;

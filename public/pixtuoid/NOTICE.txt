@@ -1,0 +1,6 @@
+Pixtuoid office renderer, copyright 2026 Ivan Wang, MIT license (see LICENSE).
+Source: https://github.com/pixtuoid/pixtuoid
+Revision: a291ea0825231ba939061b938d850afdcbe372b4
+Modifications: replay.patch. Built from the patched pixtuoid-web crate using
+Rust 1.99.1, wasm32-unknown-unknown and wasm-bindgen-cli 0.2.129.
+The renderer is a visual interpretation of summarized session events.

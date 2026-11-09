@@ -101,6 +101,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      <section className="research-replay-entry"><div><span>SECURITY RESEARCH / RECORDED SESSION</span><h2>Watch a security test replay.</h2><p>Follow four agents as they investigate whether a manipulated file list can change a cleanup task.</p><AppLink className="home-btn home-btn--secondary" to="/research-lab">Open the lab →</AppLink></div><AppLink className="research-replay-entry__preview" to="/research-lab" aria-label="Open the security test replay"><img src="/images/projects/research-lab.webp" alt="Pixel-art preview of the research lab" loading="lazy" /><span>▶ VIEW THE REPLAY</span></AppLink></section>
       <motion.section className="home-capabilities" id="services" {...fadeUp(0.1)}>
         <div className="home-capabilities__panel">
           <div className="home-services__head">

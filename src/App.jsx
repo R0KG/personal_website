@@ -10,6 +10,7 @@ const ServicesPage = lazy(() => import('./legacy/pages/ServicesPage'));
 const SkillsPage = lazy(() => import('./legacy/pages/SkillsPage'));
 const ProjectPage = lazy(() => import('./legacy/pages/ProjectPage'));
 const ContactPage = lazy(() => import('./legacy/pages/ContactPage'));
+const ResearchPage = lazy(() => import('./legacy/pages/ResearchPage'));
 
 function RouteLoader() {
   return (
@@ -40,6 +41,7 @@ function AnimatedRoutes() {
             <Route path="/skills" element={<SkillsPage />} />
             <Route path="/project" element={<ProjectPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/research-lab" element={<ResearchPage />} />
           </Routes>
         </motion.div>
       </Suspense>
