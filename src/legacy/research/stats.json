@@ -1,0 +1,10 @@
+{
+  "sessions": 52,
+  "runs": 257,
+  "targetCalls": 168,
+  "liveCalls": 113,
+  "mockCalls": 43,
+  "roleCalls": 424,
+  "negatives": 63,
+  "costUsd": 0.99
+}
