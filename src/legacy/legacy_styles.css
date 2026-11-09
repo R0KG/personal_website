@@ -6344,3 +6344,14 @@ button{font-family:inherit}
 @media(max-width:600px){.research-brief h2{font-size:11px}.research-process__heading h2{font-size:13px}.research-process__flow h3,.research-process__limits h3{font-size:10px}}
 .research-replay .research-brief p.research-brief__stats{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400;font-size:8px;line-height:1.9;letter-spacing:0}
 .research-replay .research-cases button small{font-family:var(--home-font-display),'Press Start 2P',monospace;font-weight:400;font-size:7px;line-height:1.8;letter-spacing:0}
+
+/* Research lab: match the rest of the site — one typeface (Press Start 2P), uppercase, no mixing with a sans-serif. */
+.research-replay.research-replay :is(h2,h3,p,li,dd,dt,summary,strong,small,span,a,button,em,b,details):not(.research-office__overlays *){font-family:var(--home-font-display),'Press Start 2P',monospace;text-transform:uppercase;font-style:normal}
+.research-replay.research-replay :is(p,dd):not(.research-office__overlays *){font-size:9px;line-height:2;letter-spacing:0}
+.research-replay.research-replay .research-process__flow dd{font-size:8px;line-height:1.9}
+.research-replay.research-replay .research-dialogue__disclaimer,.research-replay.research-replay .research-replay__meta p{font-size:7px;line-height:2}
+.research-replay.research-replay .research-brief h2{font-size:12px;line-height:1.8}
+.research-replay.research-replay .research-process__heading h2{font-size:clamp(14px,1.8vw,18px);line-height:1.7}
+.research-replay.research-replay .research-process__heading>p{max-width:760px}
+.research-replay.research-replay :is(h2,h3){text-wrap:balance}
+@media(max-width:600px){.research-replay.research-replay :is(p,dd):not(.research-office__overlays *){font-size:8px}.research-replay.research-replay .research-process__flow dd{font-size:7px}.research-replay.research-replay .research-brief h2{font-size:10px}.research-replay.research-replay .research-process__heading h2{font-size:12px}}
