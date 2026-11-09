@@ -100,7 +100,7 @@ export default function ResearchReplay() {
       <div><dt>{totals.runs}</dt><dd>experiment runs</dd></div>
       <div title={`${totals.liveCalls} live Codex calls, ${totals.mockCalls} on the mock target`}><dt>{totals.targetCalls}</dt><dd>target calls</dd></div>
       <div><dt>{totals.roleCalls}</dt><dd>agent role calls</dd></div>
-      <div><dt>≈${totals.costUsd.toFixed(2)}</dt><dd>est. model cost</dd></div>
+      <div><dt>~${totals.costUsd.toFixed(2)}</dt><dd>est. model cost</dd></div>
     </dl>
 
     <div className="research-filters" role="group" aria-label="Filter cases by outcome">{FILTERS.map(([key, label]) => <button key={key} aria-pressed={filter === key} onClick={() => setFilter(key)}>{label}</button>)}</div>
@@ -110,7 +110,7 @@ export default function ResearchReplay() {
       <div className="research-replay__stage"><div className="research-replay__top"><span>SESSION MONITOR · CASE {String(caseIndex + 1).padStart(2, '0')}</span><span>{playing ? '● PLAYING' : '○ PAUSED'}</span></div>
         <ol className="research-pipeline" aria-label="Research loop roles">{PIPELINE.map(([id, name, short]) => <li key={id} className={beat.actor === id || beat.to === id || (id === 'X' && beat.to === 'S') ? 'is-active' : ''} data-boundary={id === 'X' ? 'true' : undefined} title={name}><span className="full">{name}</span><span className="short" aria-hidden="true">{short}</span></li>)}</ol>
         <SwarmStage data={data} beats={beats} index={index} playing={playing} speed={speed} kick={kick} marks={marks} onMark={onMark} onBeatDone={onBeatDone} showStart={idle} onStart={play} />
-        <p className="research-handoff">{handoff}</p>
+        <p className="research-handoff">{handoff.split(' → ').flatMap((part, i) => (i ? [<i key={i} className="research-arrow" aria-hidden="true">→</i>, part] : [part]))}</p>
         <ol className="research-steps" aria-label="Case steps">{beats.map((b, i) => <li key={b.title + i}><button onClick={() => goTo(i)} aria-label={`Step ${i + 1}: ${b.title}`} aria-current={i === index ? 'step' : undefined} className={i < index ? 'is-done' : i === index ? 'is-current' : ''}><span>{b.title}</span></button></li>)}</ol>
         <div className="research-replay__actions"><button onClick={() => (playing ? setPlaying(false) : play())}>{playing ? 'PAUSE' : index === last ? 'REPLAY' : 'PLAY'}</button><button onClick={() => goTo(Math.max(0, index - 1))} disabled={index === 0}>PREVIOUS</button><button onClick={() => goTo(Math.min(last, index + 1))} disabled={index === last}>NEXT</button><button onClick={() => setSpeed(speed === 1 ? 2 : 1)} aria-label={`Playback speed ${speed}x. Switch to ${speed === 1 ? 2 : 1}x`}>{speed}×</button><button onClick={() => { setPlaying(false); setIndex(0); setMarkedThrough(-1); }}>RESET</button><button onClick={share} className="research-share">{copied ? 'LINK COPIED' : 'COPY LINK'}</button></div>
         <p className="research-keys">SPACE play / pause · ← → step</p>

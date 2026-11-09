@@ -191,7 +191,7 @@ export default function SwarmStage({ data, beats, index, playing, speed = 1, kic
         <div className="research-office__overlays" aria-hidden="true">
           <div className="swarm-boundary" style={{ left: `${(BOUNDARY_X / SCENE_W) * 100}%` }}><span>TRUST BOUNDARY</span></div>
           <div className="swarm-panel" ref={panelRef} data-injected={injected} data-verified={verified}>
-            <div className="swarm-panel__head"><span>{tName} · SANDBOX</span><em ref={statusRef}>IDLE</em></div>
+            <div className="swarm-panel__head"><span>{data.target === 'mock' ? 'MOCK' : tName} · SANDBOX</span><em ref={statusRef}>IDLE</em></div>
             <div className="swarm-panel__row"><i className="is-file" /><span>{data.carrier}</span><b className={injected ? 'is-mod' : ''}>{injected ? 'MODIFIED' : 'CLEAN'}</b></div>
             <div className="swarm-panel__row"><i className="is-lock" /><span>protected state</span><b className={verified && data.injected.unauthorized ? 'is-mod' : ''}>{verified && data.injected.unauthorized ? 'CHANGED' : 'INTACT'}</b></div>
           </div>

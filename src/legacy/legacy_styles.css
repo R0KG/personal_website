@@ -6258,3 +6258,60 @@ textarea {
 @keyframes notfound-flicker{0%,92%,96%{opacity:1}94%{opacity:.35}98%{opacity:.7}}
 @media(prefers-reduced-motion:reduce){.notfound__code{animation:none}}
 @media(max-width:600px){.notfound__actions{flex-direction:column;align-items:stretch;width:100%}}
+
+/* Research lab typography: short labels, tags and status tokens use the display font
+   (like the rest of the site); sentences and descriptions keep the body font. */
+.research-board__head,.research-board__row.is-header>span,.research-board__row>span+span,
+.research-pipeline,.research-filters button,.research-cases button span,.research-cases button strong,
+.research-steps button span,.research-engineering-note>span,.research-handoff,.research-dialogue__bubble strong,
+.swarm-caption strong,.notfound__path span,.research-dialogue__avatar{font-family:var(--home-font-display);letter-spacing:0;font-weight:400}
+.research-board__head{font-size:9px;line-height:1.6}
+.research-board__row.is-header>span,.research-board__row>span+span{font-size:8px;line-height:1.7}
+.research-pipeline{font-size:8px}
+.research-filters button{font-size:8px;line-height:1.4;padding:8px 10px}
+.research-cases button span{font-size:7px;line-height:1.7}
+.research-cases button strong{font-size:8px;line-height:1.6}
+.research-steps button span{font-size:8px}
+.research-engineering-note>span{font-size:8px;line-height:1.6}
+.research-handoff{font-size:8px;line-height:1.7}
+.research-dialogue__bubble strong{font-size:9px;line-height:1.5}
+.research-dialogue__avatar{font-size:10px}
+.swarm-caption strong{font-size:8px}
+.notfound__path span{font-size:9px}
+/* in-scene labels */
+.swarm-stage .swarm-tag,.swarm-stage .swarm-panel__head,.swarm-stage .swarm-panel__row b,.swarm-stage .swarm-boundary span,
+.swarm-stage .research-office__artifact,.swarm-stage .research-office__alert strong,.swarm-stage .research-office__alert em,
+.swarm-stage .research-office__speech strong{font-family:var(--home-font-display);font-weight:400;letter-spacing:0}
+.swarm-stage .swarm-tag{font-size:clamp(6px,.58vw,8px);line-height:1.5}
+.swarm-stage .swarm-panel__head,.swarm-stage .swarm-panel__row b{font-size:clamp(6px,.56vw,8px)}
+.swarm-stage .swarm-boundary span{font-size:clamp(5px,.5vw,7px)}
+.swarm-stage .research-office__artifact{font-size:clamp(6px,.58vw,8px);line-height:1.5}
+.swarm-stage .research-office__alert strong{font-size:clamp(7px,.72vw,10px);line-height:1.6}
+.swarm-stage .research-office__alert em{font-size:clamp(6px,.6vw,8px)}
+.swarm-stage .research-office__speech strong{font-size:clamp(6px,.6vw,8px);line-height:1.5}
+/* leftovers that still named generic fonts */
+.research-replay__event strong,.research-office small,.research-dialogue__bubble small,.swarm-stage__error{font-family:var(--home-font-body)}
+.notfound__path code{font-family:var(--home-font-body)}
+@media(max-width:700px){
+  .research-pipeline{font-size:7px}
+  .research-board__row.is-header>span,.research-board__row>span+span{font-size:7px}
+  .research-cases button strong{font-size:7px}
+  .swarm-stage .swarm-tag,.swarm-stage .research-office__artifact,.swarm-stage .swarm-panel__head,.swarm-stage .swarm-panel__row b,.swarm-stage .research-office__alert em,.swarm-stage .research-office__speech strong{font-size:6px}
+  .swarm-stage .swarm-boundary span{font-size:5px}
+  .swarm-stage .research-office__alert strong{font-size:7px}
+}
+/* The display font has no arrow glyph; draw arrows with the body font. */
+.research-arrow{font-family:var(--home-font-body);font-style:normal;margin:0 .5em;font-size:1.3em;line-height:1;vertical-align:-.1em}
+.swarm-stage .swarm-panel__head{gap:4px}
+.swarm-stage .swarm-panel__head span{white-space:nowrap}
+.swarm-stage .swarm-panel__head,.swarm-stage .swarm-panel__row b{font-size:clamp(6px,.5vw,7px)}
+.research-pipeline li+li:before{font-family:var(--home-font-body);font-size:14px}
+/* Press Start 2P is not legible below ~8px: on phones, in-scene labels use the body font. */
+@media(max-width:700px){
+  .swarm-stage .swarm-tag,.swarm-stage .swarm-panel__head,.swarm-stage .swarm-panel__row b,.swarm-stage .swarm-boundary span,
+  .swarm-stage .research-office__artifact,.swarm-stage .research-office__alert strong,.swarm-stage .research-office__alert em,
+  .swarm-stage .research-office__speech strong{font-family:var(--home-font-body);font-weight:700;letter-spacing:.02em}
+  .swarm-stage .swarm-tag,.swarm-stage .research-office__artifact,.swarm-stage .swarm-panel__head,.swarm-stage .swarm-panel__row b,.swarm-stage .research-office__alert em{font-size:5.5px}
+  .swarm-stage .swarm-boundary span{font-size:5px}
+  .swarm-stage .research-office__alert strong{font-size:6px}
+}

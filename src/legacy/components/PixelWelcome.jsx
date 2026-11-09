@@ -1,26 +1,30 @@
 import { useEffect, useState } from 'react';
 
-const SESSION_KEY = 'roman-intro-v4-seen';
+// The intro plays once per browser, on the very first visit. localStorage remembers it
+// across sessions; sessionStorage is the fallback when localStorage is blocked.
+const VISIT_KEY = 'roman-intro-v5-seen';
 const INTRO_DURATION_MS = 2800;
 
-function isFirstVisit() {
-  try {
-    return sessionStorage.getItem(SESSION_KEY) !== 'yes';
-  } catch {
-    return true;
+function readSeen() {
+  for (const store of ['localStorage', 'sessionStorage']) {
+    try { if (window[store].getItem(VISIT_KEY) === 'yes') return true; } catch { /* storage unavailable */ }
+  }
+  return false;
+}
+function markSeen() {
+  for (const store of ['localStorage', 'sessionStorage']) {
+    try { window[store].setItem(VISIT_KEY, 'yes'); return; } catch { /* try the next store */ }
   }
 }
+
+const isFirstVisit = () => !readSeen();
 
 export default function PixelWelcome() {
   const [visible, setVisible] = useState(isFirstVisit);
 
   useEffect(() => {
     if (!visible) return undefined;
-    try {
-      sessionStorage.setItem(SESSION_KEY, 'yes');
-    } catch {
-      // The intro can still play when browser storage is unavailable.
-    }
+    markSeen();
 
     const timer = window.setTimeout(() => setVisible(false), INTRO_DURATION_MS);
     return () => {
