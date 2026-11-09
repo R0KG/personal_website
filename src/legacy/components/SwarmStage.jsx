@@ -5,7 +5,27 @@ import { ROLE_NAMES, TARGET_NAMES } from '../research/beats';
 // One shared engine instance: React StrictMode mounts twice, and instantiating the wasm
 // module twice would leave Office pointers and memory pointing at different instances.
 let enginePromise;
-const loadEngine = () => (enginePromise ||= import('../../vendor/pixtuoid/pixtuoid_web.js').then(async mod => ({ mod, wasm: await mod.default() })));
+// The 4 MB wasm is also shipped gzipped (~0.6 MB) because static hosts may not compress .wasm.
+// Some servers hand it over already unpacked (Content-Encoding), so check the magic bytes.
+// The plain bundled copy remains as a fallback.
+async function fetchPackedWasm() {
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}pixtuoid/pixtuoid_web_bg.wasm.gz`);
+    if (!res.ok) return null;
+    const buf = new Uint8Array(await res.arrayBuffer());
+    if (buf[0] === 0x00 && buf[1] === 0x61 && buf[2] === 0x73 && buf[3] === 0x6d) return buf; // already wasm
+    if (buf[0] === 0x1f && buf[1] === 0x8b && typeof DecompressionStream !== 'undefined') {
+      return new Uint8Array(await new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    return null;
+  } catch { return null; }
+}
+const loadEngine = () => (enginePromise ||= import('../../vendor/pixtuoid/pixtuoid_web.js').then(async mod => {
+  const packed = await fetchPackedWasm();
+  let wasm;
+  try { wasm = await mod.default(packed ? { module_or_path: packed } : undefined); } catch { wasm = await mod.default(); }
+  return { mod, wasm };
+}));
 
 const TAGS = ['R', 'E', 'C', 'V', 'X'];
 const FX_LABEL = { run: 'RUNNING…', inject: 'INJECTING…' };

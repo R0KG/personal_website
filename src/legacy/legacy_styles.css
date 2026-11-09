@@ -6242,3 +6242,5 @@ textarea {
 .research-cases button[data-outcome=attack_verified] strong{color:#ff8a8a}
 .research-cases button[data-outcome=attack_verified]{border-color:#5a2f33}
 .research-cases button[data-outcome=attack_verified][aria-pressed=true]{border-color:#f4d03f}
+/* Poster shown until the pixel office has loaded */
+.swarm-stage{background:#101319 url('/images/projects/research-lab.webp') center/cover no-repeat}
